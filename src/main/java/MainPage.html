@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/docs.min.css" rel="stylesheet">
+    <script language="Javascript" type="text/javascript" src="com/enums/MetaData.js"></script>
+    <script language="Javascript" type="text/javascript" src="com/Manager/ElementManager.js"></script>
+    <script language="Javascript" type="text/javascript" src="com/personal/info/CandidateName.js"></script>
+    <script language="Javascript" type="text/javascript" src="com/personal/info/Questions.js"></script>
+    <script language="Javascript" type="text/javascript" src="com/personal/info/Response.js"></script>
+    <script language="Javascript" type="text/javascript" src="com/Manager/FileManager.js"></script>
+    <script src="test/ElementManagerTest.js"></script>
+    <script src="test/qunit-1.16.0.js"></script>
+    <script type="text/javascript">
+        function letStart() {
+            newQuestion('submit')
+        }
+        window.onload = letStart;
+    </script>
+    <link rel="stylesheet" href="test/qunit-1.16.0.css">
+    <style>
+        .hideMe {
+            display: none;
+        }
+        .showMe {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<div class="bs-example-modal">
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <h4 class="modal-title"><label id="title"></label></h4>
+                </div>
+                <div class="modal-body" align="center">
+                    <label id="label"></label><br>
+                    <form class="form-inline hidden" style="width: 300px" id="amount">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">€</div>
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                                <div class="input-group-addon">.00</div>
+                            </div>
+                        </div>
+                    </form>
+                    <textarea id="text" class="form-control hidden" style="width: 300px" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn btn-default"
+                            id="cancel"
+                            name="cancel"
+                            onclick="newQuestion(this.id)">
+                    </button>
+                    <button type="button"
+                            class="btn btn-primary"
+                            id="submit"
+                            name="submit"
+                            onclick="newQuestion(this.id)">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
